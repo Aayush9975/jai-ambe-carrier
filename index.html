@@ -38,7 +38,15 @@
       color: inherit;
     }
 
-    /* NAVBAR */
+    button,
+    input {
+      font-family: inherit;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
     .navbar {
       position: sticky;
       top: 0;
@@ -91,19 +99,33 @@
       border-radius: 8px;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
       background:
-        radial-gradient(circle at 85% 20%, rgba(230,57,32,.16), transparent 30%),
-        linear-gradient(135deg, #fff 0%, #fff5f2 100%);
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(230,57,32,.16),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #fff 0%,
+          #fff5f2 100%
+        );
+
       padding: 90px 22px 80px;
     }
 
     .hero-container {
       max-width: 1180px;
       margin: auto;
+
       display: grid;
       grid-template-columns: 1.15fr .85fr;
+
       gap: 60px;
       align-items: center;
     }
@@ -154,6 +176,7 @@
       font-weight: 700;
       border: 1px solid transparent;
       transition: .2s;
+      cursor: pointer;
     }
 
     .btn-primary {
@@ -172,7 +195,15 @@
       color: var(--dark);
     }
 
-    /* ROUTE CARD */
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* =========================
+       ROUTE CARD
+    ========================= */
+
     .route-card {
       background: white;
       border: 1px solid var(--border);
@@ -225,7 +256,10 @@
       font-size: 14px;
     }
 
-    /* SECTIONS */
+    /* =========================
+       SECTIONS
+    ========================= */
+
     section {
       padding: 85px 22px;
     }
@@ -259,7 +293,10 @@
       color: #667085;
     }
 
-    /* SERVICES */
+    /* =========================
+       SERVICES
+    ========================= */
+
     .services {
       background: var(--light);
     }
@@ -305,7 +342,10 @@
       font-size: 14px;
     }
 
-    /* ABOUT */
+    /* =========================
+       ABOUT
+    ========================= */
+
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -358,7 +398,10 @@
       color: #d0d5dd;
     }
 
-    /* TEAM */
+    /* =========================
+       TEAM
+    ========================= */
+
     .team {
       background: var(--light);
     }
@@ -405,7 +448,10 @@
       color: #667085;
     }
 
-    /* CONTACT */
+    /* =========================
+       CONTACT
+    ========================= */
+
     .contact {
       background: white;
     }
@@ -447,7 +493,10 @@
       font-size: 14px;
     }
 
-    /* CTA */
+    /* =========================
+       CTA
+    ========================= */
+
     .cta {
       padding: 70px 22px;
       background: var(--primary);
@@ -470,7 +519,15 @@
       color: var(--primary);
     }
 
-    /* FOOTER */
+    .cta .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
       background: #0b1220;
       color: #98a2b3;
@@ -483,8 +540,295 @@
       color: white;
     }
 
-    /* MOBILE */
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(16,24,40,.68);
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 480px;
+      background: white;
+      border-radius: 18px;
+      padding: 32px;
+      position: relative;
+      box-shadow: 0 25px 70px rgba(0,0,0,.25);
+      animation: modalIn .22s ease-out;
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+
+      border: none;
+      background: #f2f4f7;
+
+      width: 36px;
+      height: 36px;
+
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      font-size: 22px;
+      line-height: 36px;
+
+      color: #475467;
+
+      transition: .2s;
+    }
+
+    .modal-close:hover {
+      background: #e4e7ec;
+      color: var(--primary);
+    }
+
+    .modal-box h2 {
+      color: var(--dark);
+      margin-bottom: 7px;
+      font-size: 28px;
+      padding-right: 35px;
+    }
+
+    .modal-description {
+      color: #667085;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 13px 14px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 9px;
+
+      outline: none;
+
+      font-size: 15px;
+
+      color: var(--dark);
+
+      background: white;
+
+      transition: .2s;
+    }
+
+    .form-group input:focus {
+      border-color: var(--primary);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(230,57,32,.1);
+    }
+
+    .form-group input::placeholder {
+      color: #98a2b3;
+    }
+
+    .enquiry-submit {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       SEARCHABLE CITY DROPDOWN
+    ========================= */
+
+    .city-select-wrapper {
+      position: relative;
+    }
+
+    .city-input-box {
+      position: relative;
+    }
+
+    .city-input {
+      padding-right: 42px !important;
+    }
+
+    .city-arrow {
+      position: absolute;
+
+      right: 14px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: #667085;
+
+      font-size: 15px;
+
+      pointer-events: none;
+
+      transition: .2s;
+    }
+
+    .city-input-box.open .city-arrow {
+      transform:
+        translateY(-50%)
+        rotate(180deg);
+    }
+
+    .city-suggestions {
+      display: none;
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+
+      top: calc(100% + 6px);
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 10px;
+
+      max-height: 220px;
+
+      overflow-y: auto;
+
+      box-shadow:
+        0 12px 30px
+        rgba(16,24,40,.12);
+
+      z-index: 20;
+
+      padding: 5px;
+    }
+
+    .city-suggestions.show {
+      display: block;
+    }
+
+    .city-option {
+      padding: 11px 12px;
+
+      border-radius: 7px;
+
+      cursor: pointer;
+
+      font-size: 14px;
+
+      color: var(--dark);
+
+      transition: .15s;
+    }
+
+    .city-option:hover,
+    .city-option.highlighted {
+      background: #fff0ed;
+
+      color: var(--primary);
+    }
+
+    .no-city {
+      padding: 11px 12px;
+
+      color: #98a2b3;
+
+      font-size: 14px;
+    }
+
+    .form-success {
+      display: none;
+
+      background: #ecfdf3;
+
+      border: 1px solid #abefc6;
+
+      color: #067647;
+
+      padding: 12px 14px;
+
+      border-radius: 9px;
+
+      font-size: 14px;
+
+      margin-top: 15px;
+
+      text-align: center;
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    .form-error {
+      display: none;
+
+      background: #fef3f2;
+
+      border: 1px solid #fecdca;
+
+      color: #b42318;
+
+      padding: 12px 14px;
+
+      border-radius: 9px;
+
+      font-size: 14px;
+
+      margin-top: 15px;
+
+      text-align: center;
+    }
+
+    .form-error.show {
+      display: block;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 800px) {
+
       .nav-links {
         display: none;
       }
@@ -525,34 +869,108 @@
       .arrow {
         transform: rotate(90deg);
       }
+
+      .modal {
+        padding: 15px;
+      }
+
+      .modal-box {
+        padding: 27px 20px;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+      }
     }
+
+    @media (max-width: 400px) {
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .modal-box h2 {
+        font-size: 24px;
+      }
+
+      .modal-box {
+        padding: 25px 17px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
   <nav class="navbar">
+
     <div class="nav-container">
-      <div class="logo">Jai Ambe <span>Carrier</span></div>
+
+      <div class="logo">
+        Jai Ambe <span>Carrier</span>
+      </div>
 
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#routes">Routes</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a class="nav-btn" href="#contact">Contact</a></li>
+
+        <li>
+          <a href="#about">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#services">
+            Services
+          </a>
+        </li>
+
+        <li>
+          <a href="#routes">
+            Routes
+          </a>
+        </li>
+
+        <li>
+          <a href="#team">
+            Team
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="nav-btn"
+            href="#contact"
+          >
+            Contact
+          </a>
+        </li>
+
       </ul>
+
     </div>
+
   </nav>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================= -->
+
   <header class="hero">
+
     <div class="hero-container">
 
       <div>
-        <div class="badge">TRUSTED TRANSPORT SERVICE</div>
+
+        <div class="badge">
+          TRUSTED TRANSPORT SERVICE
+        </div>
 
         <h1>
           Reliable Transport.<br>
@@ -566,41 +984,78 @@
         </p>
 
         <div class="buttons">
-          <a href="#contact" class="btn btn-primary">
-            Get Transport Enquiry
-          </a>
 
-          <a href="#routes" class="btn btn-outline">
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="openEnquiryModal()"
+          >
+            Get Transport Enquiry
+          </button>
+
+          <a
+            href="#routes"
+            class="btn btn-outline"
+          >
             View Our Routes
           </a>
+
         </div>
+
       </div>
 
 
       <!-- ROUTE CARD -->
-      <div class="route-card" id="routes">
 
-        <h3>Our Main Transport Route</h3>
+      <div
+        class="route-card"
+        id="routes"
+      >
+
+        <h3>
+          Our Main Transport Route
+        </h3>
 
         <div class="route">
+
           <div class="city">
+
             SURAT
-            <small>Gujarat</small>
+
+            <small>
+              Gujarat
+            </small>
+
           </div>
 
-          <div class="arrow">→</div>
+          <div class="arrow">
+            →
+          </div>
 
           <div class="city">
+
             VASAI
-            <small>Maharashtra</small>
+
+            <small>
+              Maharashtra
+            </small>
+
           </div>
 
-          <div class="arrow">→</div>
+          <div class="arrow">
+            →
+          </div>
 
           <div class="city">
+
             MUMBAI
-            <small>Maharashtra</small>
+
+            <small>
+              Maharashtra
+            </small>
+
           </div>
+
         </div>
 
         <div class="return">
@@ -610,88 +1065,175 @@
       </div>
 
     </div>
+
   </header>
 
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
+  <!-- =========================
+       SERVICES
+  ========================= -->
+
+  <section
+    class="services"
+    id="services"
+  >
+
     <div class="container">
 
       <div class="section-head">
-        <span>What We Do</span>
-        <h2>Transport Services</h2>
+
+        <span>
+          What We Do
+        </span>
+
+        <h2>
+          Transport Services
+        </h2>
+
         <p>
           Safe and dependable transportation solutions for
           businesses and parcel requirements.
         </p>
+
       </div>
+
 
       <div class="service-grid">
 
+
         <div class="service-card">
-          <div class="icon">🚚</div>
-          <h3>Truck Transportation</h3>
+
+          <div class="icon">
+            🚚
+          </div>
+
+          <h3>
+            Truck Transportation
+          </h3>
+
           <p>
             Reliable truck-based transportation for parcels and
             commercial goods.
           </p>
+
         </div>
 
+
         <div class="service-card">
-          <div class="icon">📦</div>
-          <h3>Parcel Delivery</h3>
+
+          <div class="icon">
+            📦
+          </div>
+
+          <h3>
+            Parcel Delivery
+          </h3>
+
           <p>
             Business and parcel delivery services across our
             regular transport routes.
           </p>
+
         </div>
 
+
         <div class="service-card">
-          <div class="icon">🔄</div>
-          <h3>Return Transport</h3>
+
+          <div class="icon">
+            🔄
+          </div>
+
+          <h3>
+            Return Transport
+          </h3>
+
           <p>
             Return transportation from Mumbai and Vasai towards
             Surat is also available.
           </p>
+
         </div>
 
+
         <div class="service-card">
-          <div class="icon">🛣️</div>
-          <h3>Route Transport</h3>
+
+          <div class="icon">
+            🛣️
+          </div>
+
+          <h3>
+            Route Transport
+          </h3>
+
           <p>
             Regular movement between Surat, Vasai and Mumbai.
           </p>
+
         </div>
 
+
         <div class="service-card">
-          <div class="icon">🏢</div>
-          <h3>Business Logistics</h3>
+
+          <div class="icon">
+            🏢
+          </div>
+
+          <h3>
+            Business Logistics
+          </h3>
+
           <p>
             Transportation support for shops, traders and
             commercial businesses.
           </p>
+
         </div>
 
+
         <div class="service-card">
-          <div class="icon">📞</div>
-          <h3>Easy Enquiry</h3>
+
+          <div class="icon">
+            📞
+          </div>
+
+          <h3>
+            Easy Enquiry
+          </h3>
+
           <p>
             Contact our team for route availability and
             transportation enquiries.
           </p>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section
+    class="about"
+    id="about"
+  >
+
     <div class="container about-grid">
 
       <div>
-        <span style="color:#e63920;font-size:13px;font-weight:800;">
+
+        <span
+          style="
+            color:#e63920;
+            font-size:13px;
+            font-weight:800;
+          "
+        >
           ABOUT JAI AMBE CARRIER
         </span>
 
@@ -712,16 +1254,33 @@
         </p>
 
         <ul class="checks">
-          <li>Regular Surat – Vasai – Mumbai route</li>
-          <li>Return transportation available</li>
-          <li>Truck-based parcel delivery</li>
-          <li>Business-focused transport service</li>
+
+          <li>
+            Regular Surat – Vasai – Mumbai route
+          </li>
+
+          <li>
+            Return transportation available
+          </li>
+
+          <li>
+            Truck-based parcel delivery
+          </li>
+
+          <li>
+            Business-focused transport service
+          </li>
+
         </ul>
+
       </div>
 
 
       <div class="about-box">
-        <h3>Why Choose Us?</h3>
+
+        <h3>
+          Why Choose Us?
+        </h3>
 
         <p>
           We focus on dependable routes, straightforward
@@ -736,87 +1295,187 @@
           Surat to Maharashtra or requiring return
           transportation, our team is available to assist.
         </p>
+
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- TEAM -->
-  <section class="team" id="team">
+  <!-- =========================
+       TEAM
+  ========================= -->
+
+  <section
+    class="team"
+    id="team"
+  >
+
     <div class="container">
 
       <div class="section-head">
-        <span>Our Team</span>
-        <h2>People Behind The Service</h2>
+
+        <span>
+          Our Team
+        </span>
+
+        <h2>
+          People Behind The Service
+        </h2>
+
         <p>
           Contact our team for transport-related enquiries.
         </p>
+
       </div>
+
 
       <div class="team-grid">
 
-        <div class="person">
-          <div class="avatar">JB</div>
-          <div class="role">OWNER · SURAT</div>
-          <h3>Jabbar Singh Bhati</h3>
-          <p>Responsible for operations and overall management.</p>
-        </div>
 
         <div class="person">
-          <div class="avatar">RS</div>
-          <div class="role">OWNER · VASAI</div>
-          <h3>Robin Singh Bhati</h3>
-          <p>Available for local Vasai transport enquiries.</p>
+
+          <div class="avatar">
+            JB
+          </div>
+
+          <div class="role">
+            OWNER · SURAT
+          </div>
+
+          <h3>
+            Jabbar Singh Bhati
+          </h3>
+
+          <p>
+            Responsible for operations and overall management.
+          </p>
+
         </div>
 
+
         <div class="person">
-          <div class="avatar">SD</div>
-          <div class="role">BRANCH MANAGER · VASAI</div>
-          <h3>Sanjay Dwivedi</h3>
-          <p>Handles branch-level transport coordination.</p>
+
+          <div class="avatar">
+            RS
+          </div>
+
+          <div class="role">
+            OWNER · VASAI
+          </div>
+
+          <h3>
+            Robin Singh Bhati
+          </h3>
+
+          <p>
+            Available for local Vasai transport enquiries.
+          </p>
+
+        </div>
+
+
+        <div class="person">
+
+          <div class="avatar">
+            SD
+          </div>
+
+          <div class="role">
+            BRANCH MANAGER · VASAI
+          </div>
+
+          <h3>
+            Sanjay Dwivedi
+          </h3>
+
+          <p>
+            Handles branch-level transport coordination.
+          </p>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section
+    class="contact"
+    id="contact"
+  >
+
     <div class="container">
 
       <div class="section-head">
-        <span>Get In Touch</span>
-        <h2>Contact Our Team</h2>
+
+        <span>
+          Get In Touch
+        </span>
+
+        <h2>
+          Contact Our Team
+        </h2>
+
         <p>
           Contact us for route availability and parcel
           transportation enquiries.
         </p>
+
       </div>
+
 
       <div class="contact-grid">
 
+
         <div class="contact-card">
 
-          <h3>Surat Office</h3>
+          <h3>
+            Surat Office
+          </h3>
 
           <div class="contact-row">
-            <strong>Owner</strong>
-            <span>Jabbar Singh Bhati</span>
+
+            <strong>
+              Owner
+            </strong>
+
+            <span>
+              Jabbar Singh Bhati
+            </span>
+
           </div>
 
           <div class="contact-row">
-            <strong>Mobile</strong>
-            <span>+91 98765 43210</span>
+
+            <strong>
+              Mobile
+            </strong>
+
+            <span>
+              +91 98765 43210
+            </span>
+
           </div>
 
           <div class="contact-row">
-            <strong>Address</strong>
+
+            <strong>
+              Address
+            </strong>
+
             <span>
               Plot 24, Transport Nagar,<br>
               Surat, Gujarat – 395010
             </span>
+
           </div>
 
         </div>
@@ -824,24 +1483,45 @@
 
         <div class="contact-card">
 
-          <h3>Vasai Office</h3>
+          <h3>
+            Vasai Office
+          </h3>
 
           <div class="contact-row">
-            <strong>Branch Manager</strong>
-            <span>Sanjay Dwivedi</span>
+
+            <strong>
+              Branch Manager
+            </strong>
+
+            <span>
+              Sanjay Dwivedi
+            </span>
+
           </div>
 
           <div class="contact-row">
-            <strong>Vasai Contact</strong>
-            <span>+91 98765 43210</span>
+
+            <strong>
+              Vasai Contact
+            </strong>
+
+            <span>
+              +91 98765 43210
+            </span>
+
           </div>
 
           <div class="contact-row">
-            <strong>Address</strong>
+
+            <strong>
+              Address
+            </strong>
+
             <span>
               Shop 8, Vasai Transport Hub,<br>
               Vasai East, Maharashtra – 401208
             </span>
+
           </div>
 
         </div>
@@ -849,36 +1529,856 @@
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- CTA -->
+  <!-- =========================
+       CTA
+  ========================= -->
+
   <section class="cta">
 
-    <h2>Need Transport From Surat?</h2>
+    <h2>
+      Need Transport From Surat?
+    </h2>
 
     <p>
       Surat → Vasai → Mumbai and return transportation.
     </p>
 
-    <a href="#contact" class="btn">
+    <button
+      type="button"
+      class="btn"
+      onclick="openEnquiryModal()"
+    >
       Make An Enquiry
-    </a>
+    </button>
 
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
+
     <p>
-      © 2026 <strong>Jai Ambe Carrier</strong>.
+      © 2026
+      <strong>
+        Jai Ambe Carrier
+      </strong>.
       All Rights Reserved.
     </p>
 
     <p style="margin-top:5px;">
       Demo Website · Contact details shown are sample details.
     </p>
+
   </footer>
+
+
+  <!-- ==================================================
+       ENQUIRY MODAL
+  ================================================== -->
+
+  <div
+    class="modal"
+    id="enquiryModal"
+    aria-hidden="true"
+  >
+
+    <div
+      class="modal-box"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="enquiryTitle"
+    >
+
+      <button
+        type="button"
+        class="modal-close"
+        onclick="closeEnquiryModal()"
+        aria-label="Close enquiry form"
+      >
+        ×
+      </button>
+
+
+      <h2 id="enquiryTitle">
+        Make An Enquiry
+      </h2>
+
+      <p class="modal-description">
+        Please enter your details and our team will contact you.
+      </p>
+
+
+      <!-- =========================
+           ENQUIRY FORM
+      ========================= -->
+
+      <form id="enquiryForm">
+
+
+        <!-- NAME -->
+
+        <div class="form-group">
+
+          <label for="name">
+            Name
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            autocomplete="name"
+            required
+          />
+
+        </div>
+
+
+        <!-- MOBILE -->
+
+        <div class="form-group">
+
+          <label for="mobile">
+            Mobile Number
+          </label>
+
+          <input
+            type="tel"
+            id="mobile"
+            name="mobile"
+            placeholder="Enter 10 digit mobile number"
+            maxlength="10"
+            minlength="10"
+            pattern="[6-9][0-9]{9}"
+            inputmode="numeric"
+            autocomplete="tel"
+            required
+          />
+
+        </div>
+
+
+        <!-- CITY -->
+
+        <div class="form-group">
+
+          <label for="city">
+            City
+          </label>
+
+
+          <div class="city-select-wrapper">
+
+            <div
+              class="city-input-box"
+              id="cityInputBox"
+            >
+
+              <input
+                type="text"
+                id="city"
+                name="city"
+                class="city-input"
+                placeholder="Type or select your city"
+                autocomplete="off"
+                required
+              />
+
+              <span class="city-arrow">
+                ▼
+              </span>
+
+            </div>
+
+
+            <!-- CITY SUGGESTIONS -->
+
+            <div
+              class="city-suggestions"
+              id="citySuggestions"
+            ></div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+          type="submit"
+          class="btn btn-primary enquiry-submit"
+        >
+          Submit Enquiry
+        </button>
+
+
+        <!-- SUCCESS -->
+
+        <div
+          class="form-success"
+          id="formSuccess"
+        >
+          ✓ Thank you! Your enquiry has been submitted.
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div
+          class="form-error"
+          id="formError"
+        >
+          Please enter a valid 10 digit mobile number.
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==================================================
+       JAVASCRIPT
+  ================================================== -->
+
+  <script>
+
+    /* =========================
+       MODAL ELEMENTS
+    ========================= */
+
+    const enquiryModal =
+      document.getElementById("enquiryModal");
+
+    const enquiryForm =
+      document.getElementById("enquiryForm");
+
+    const formSuccess =
+      document.getElementById("formSuccess");
+
+    const formError =
+      document.getElementById("formError");
+
+    const mobileInput =
+      document.getElementById("mobile");
+
+
+    /* =========================
+       CITY ELEMENTS
+    ========================= */
+
+    const cityInput =
+      document.getElementById("city");
+
+    const cityInputBox =
+      document.getElementById("cityInputBox");
+
+    const citySuggestions =
+      document.getElementById("citySuggestions");
+
+
+    /* =========================
+       CITY LIST
+
+       Aap is list mein jitni
+       cities chaho add kar sakte ho.
+    ========================= */
+
+    const cities = [
+
+      "Surat",
+      "Vasai",
+      "Vasai East",
+      "Vasai West",
+      "Mumbai",
+      "Mumbai Central",
+      "Andheri",
+      "Borivali",
+      "Bandra",
+      "Thane",
+      "Mira Road",
+      "Bhayandar",
+      "Nalasopara",
+      "Virar",
+
+      "Vapi",
+      "Valsad",
+      "Navsari",
+      "Bharuch",
+      "Ankleshwar",
+      "Vadodara",
+      "Ahmedabad",
+      "Rajkot",
+      "Bhavnagar",
+
+      "Pune",
+      "Nashik",
+      "Aurangabad",
+      "Nagpur",
+      "Kolhapur",
+
+      "Palghar",
+      "Boisar",
+      "Dahanu",
+
+      "Kalyan",
+      "Dombivli",
+      "Bhiwandi",
+      "Ulhasnagar",
+
+      "Panvel",
+      "Navi Mumbai",
+      "Vashi",
+      "Airoli",
+
+      "Delhi",
+      "Jaipur",
+      "Indore",
+      "Bhopal",
+      "Hyderabad",
+      "Bangalore",
+      "Chennai"
+
+    ];
+
+
+    /* =========================
+       OPEN MODAL
+    ========================= */
+
+    function openEnquiryModal() {
+
+      enquiryModal.classList.add("active");
+
+      enquiryModal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.style.overflow = "hidden";
+
+      formSuccess.classList.remove("show");
+
+      formError.classList.remove("show");
+
+      setTimeout(function() {
+
+        document
+          .getElementById("name")
+          .focus();
+
+      }, 100);
+
+    }
+
+
+    /* =========================
+       CLOSE MODAL
+    ========================= */
+
+    function closeEnquiryModal() {
+
+      enquiryModal.classList.remove("active");
+
+      enquiryModal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.style.overflow = "";
+
+      closeCitySuggestions();
+
+    }
+
+
+    /* =========================
+       CITY SUGGESTIONS
+    ========================= */
+
+    function showCitySuggestions(searchText = "") {
+
+      const search =
+        searchText
+          .trim()
+          .toLowerCase();
+
+
+      let filteredCities;
+
+
+      if (search === "") {
+
+        filteredCities =
+          cities.slice(0, 12);
+
+      } else {
+
+        filteredCities =
+          cities.filter(function(city) {
+
+            return city
+              .toLowerCase()
+              .includes(search);
+
+          });
+
+      }
+
+
+      citySuggestions.innerHTML = "";
+
+
+      if (filteredCities.length === 0) {
+
+        citySuggestions.innerHTML = `
+          <div class="no-city">
+            No matching city found. You can enter your city manually.
+          </div>
+        `;
+
+      } else {
+
+        filteredCities.forEach(function(city) {
+
+          const option =
+            document.createElement("div");
+
+          option.className =
+            "city-option";
+
+          option.textContent =
+            city;
+
+          option.addEventListener(
+            "mousedown",
+            function(event) {
+
+              event.preventDefault();
+
+              selectCity(city);
+
+            }
+          );
+
+          citySuggestions.appendChild(option);
+
+        });
+
+      }
+
+
+      citySuggestions.classList.add("show");
+
+      cityInputBox.classList.add("open");
+
+    }
+
+
+    /* =========================
+       SELECT CITY
+    ========================= */
+
+    function selectCity(city) {
+
+      cityInput.value = city;
+
+      closeCitySuggestions();
+
+    }
+
+
+    /* =========================
+       CLOSE CITY DROPDOWN
+    ========================= */
+
+    function closeCitySuggestions() {
+
+      citySuggestions.classList.remove("show");
+
+      cityInputBox.classList.remove("open");
+
+    }
+
+
+    /* =========================
+       CITY CLICK
+    ========================= */
+
+    cityInput.addEventListener(
+      "focus",
+      function() {
+
+        showCitySuggestions(
+          cityInput.value
+        );
+
+      }
+    );
+
+
+    cityInput.addEventListener(
+      "input",
+      function() {
+
+        showCitySuggestions(
+          cityInput.value
+        );
+
+      }
+    );
+
+
+    /* =========================
+       CITY KEYBOARD
+
+       Arrow Down
+       Arrow Up
+       Enter
+       Escape
+    ========================= */
+
+    cityInput.addEventListener(
+      "keydown",
+      function(event) {
+
+        const options =
+          citySuggestions.querySelectorAll(
+            ".city-option"
+          );
+
+
+        if (
+          event.key === "ArrowDown"
+        ) {
+
+          event.preventDefault();
+
+          if (options.length > 0) {
+
+            options[0]
+              .classList
+              .add("highlighted");
+
+          }
+
+        }
+
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeCitySuggestions();
+
+        }
+
+
+        if (
+          event.key === "Enter"
+        ) {
+
+          const highlighted =
+            citySuggestions.querySelector(
+              ".highlighted"
+            );
+
+          if (highlighted) {
+
+            event.preventDefault();
+
+            selectCity(
+              highlighted.textContent
+            );
+
+          }
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       MOUSE HOVER / KEYBOARD
+       HIGHLIGHT
+    ========================= */
+
+    citySuggestions.addEventListener(
+      "mouseover",
+      function(event) {
+
+        if (
+          event.target.classList
+            .contains("city-option")
+        ) {
+
+          const options =
+            citySuggestions.querySelectorAll(
+              ".city-option"
+            );
+
+          options.forEach(function(option) {
+
+            option.classList.remove(
+              "highlighted"
+            );
+
+          });
+
+          event.target.classList.add(
+            "highlighted"
+          );
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       CLICK OUTSIDE CITY DROPDOWN
+    ========================= */
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        const cityWrapper =
+          document.querySelector(
+            ".city-select-wrapper"
+          );
+
+        if (
+          !cityWrapper.contains(event.target)
+        ) {
+
+          closeCitySuggestions();
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       MOBILE NUMBER
+       ONLY NUMBERS
+    ========================= */
+
+    mobileInput.addEventListener(
+      "input",
+      function() {
+
+        this.value =
+          this.value
+            .replace(/[^0-9]/g, "")
+            .slice(0, 10);
+
+      }
+    );
+
+
+    /* =========================
+       CLOSE MODAL
+       OUTSIDE CLICK
+    ========================= */
+
+    enquiryModal.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          event.target === enquiryModal
+        ) {
+
+          closeEnquiryModal();
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       ESCAPE CLOSE
+    ========================= */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape" &&
+          enquiryModal.classList.contains(
+            "active"
+          )
+        ) {
+
+          closeEnquiryModal();
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       FORM SUBMIT
+    ========================= */
+
+    enquiryForm.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+
+        formSuccess.classList.remove(
+          "show"
+        );
+
+        formError.classList.remove(
+          "show"
+        );
+
+
+        /* GET FORM DATA */
+
+        const name =
+          document
+            .getElementById("name")
+            .value
+            .trim();
+
+        const mobile =
+          document
+            .getElementById("mobile")
+            .value
+            .trim();
+
+        const city =
+          document
+            .getElementById("city")
+            .value
+            .trim();
+
+
+        /* MOBILE VALIDATION */
+
+        const mobileRegex =
+          /^[6-9][0-9]{9}$/;
+
+
+        if (
+          !mobileRegex.test(mobile)
+        ) {
+
+          formError.classList.add(
+            "show"
+          );
+
+          return;
+
+        }
+
+
+        /* =========================
+           DATA OBJECT
+
+           Future API mein isi data
+           ko send kar sakte hain.
+        ========================= */
+
+        const enquiryData = {
+
+          name: name,
+
+          mobile: mobile,
+
+          city: city,
+
+          submittedAt:
+            new Date().toISOString()
+
+        };
+
+
+        /* TEMPORARY TEST */
+
+        console.log(
+          "New Enquiry:",
+          enquiryData
+        );
+
+
+        /* =========================
+           FUTURE API
+
+           Example:
+
+           fetch("YOUR_API_URL", {
+             method: "POST",
+             headers: {
+               "Content-Type": "application/json"
+             },
+             body: JSON.stringify(
+               enquiryData
+             )
+           })
+           .then(response =>
+             response.json()
+           )
+           .then(data => {
+             console.log(data);
+           })
+           .catch(error => {
+             console.error(error);
+           });
+        ========================= */
+
+
+        /* SUCCESS */
+
+        formSuccess.classList.add(
+          "show"
+        );
+
+
+        /* RESET */
+
+        enquiryForm.reset();
+
+
+        /* CLOSE AFTER 2.5 SEC */
+
+        setTimeout(
+          function() {
+
+            formSuccess.classList.remove(
+              "show"
+            );
+
+            closeEnquiryModal();
+
+          },
+          2500
+        );
+
+      }
+    );
+
+  </script>
 
 </body>
 </html>
